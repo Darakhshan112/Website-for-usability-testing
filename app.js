@@ -47,8 +47,8 @@ app.post("/", async (req, res) => {
     const { username } = req.body
     res.cookie("username", username)
     setCache(res)
-    // const userlog = saveLogs(username, "StartButton")
-    // await userlog.save()
+    const userlog = saveLogs(username, "StartButton")
+    await userlog.save()
     res.status(201).redirect("/showStudentPage")
 })
 app.get("/showStudentPage", async (req, res) => {
@@ -57,8 +57,8 @@ app.get("/showStudentPage", async (req, res) => {
     if (req.cookies.username === undefined) {
         res.redirect("/")
     } else {
-        // const userlog = saveLogs(req.cookies.username,"ShowStudentPage")
-        // await userlog.save()
+        const userlog = saveLogs(req.cookies.username,"ShowStudentPage")
+        await userlog.save()
         await Student.find({}, function (err, docs) {
             if (!err) {
                 res.render("showStudentPage", {
@@ -69,17 +69,12 @@ app.get("/showStudentPage", async (req, res) => {
                 console.log("failed" + err)
             }
         }).clone().catch(function (err) { console.log(err) })
-
     }
-
 })
-
-
-
 app.get("/addStudentButton", async (req, res) => {
     setCache(res)
-    // const userlog = saveLogs(req.cookies.username, "AddStudentButton")
-    // await userlog.save()
+    const userlog = saveLogs(req.cookies.username, "AddStudentButton")
+    await userlog.save()
     res.redirect("/addStudentPage")
 })
 app.get("/addStudentPage", async (req, res) => {
@@ -88,8 +83,8 @@ app.get("/addStudentPage", async (req, res) => {
         res.redirect("/")
     } else {
         res.render("addStudentPage")
-        // const userlog = saveLogs(req.cookies.username, "AddStudentPage")
-        // await userlog.save()
+        const userlog = saveLogs(req.cookies.username, "AddStudentPage")
+        await userlog.save()
     }
 
 })
@@ -101,58 +96,44 @@ app.post("/addStudentPage", async (req, res) => {
             lastname: req.body.lastname
         })
         await RegisterEmployee.save()
-        // const userlog = saveLogs(req.cookies.username, "SubmitButton")
-        // await userlog.save()
+        const userlog = saveLogs(req.cookies.username, "SubmitButton")
+        await userlog.save()
         res.status(201).redirect("/showStudentPage")
     } catch (error) {
         res.status(400).send(error)
-
     }
 })
-
-
 app.get("/deleteStudentPage", async (req, res) => {
     setCache(res)
     if (req.cookies.username === undefined) {
         res.redirect("/")
     } else {
-
-        // const userlog = saveLogs(req.cookies.username, "DeleteStudentPage")
-        // await userlog.save()
-
+        const userlog = saveLogs(req.cookies.username, "DeleteStudentPage")
+        await userlog.save()
         await Student.find({}, function (err, docs) {
             if (!err) {
                 res.render("deleteStudentPage", {
                     data: docs
-
                 })
             } else {
                 console.log("failed" + err)
             }
         }).clone().catch(function (err) { console.log(err) })
-
-
     }
-
-
 })
-
-
-
-
 
 
 app.get("/deleteStudentButton", async (req, res) => {
     setCache(res)
-    // const userlog = saveLogs(req.cookies.username, "DeleteStudentButton")
-    // await userlog.save()
+    const userlog = saveLogs(req.cookies.username, "DeleteStudentButton")
+    await userlog.save()
     res.redirect("/deleteStudentPage")
 })
 
 app.get("/showReportButton", async (req, res) => {
     setCache(res)
-    // const userlog = saveLogs(req.cookies.username, "ReportButton")
-    // await userlog.save()
+    const userlog = saveLogs(req.cookies.username, "ReportButton")
+    await userlog.save()
     res.redirect("/reportPage")
 })
 app.get("/reportPage", async (req, res) => {
@@ -161,17 +142,15 @@ app.get("/reportPage", async (req, res) => {
         res.redirect("/")
     } else {
         res.render("reportPage")
-        // const userlog = saveLogs(req.cookies.username, "ReportPage")
-        // await userlog.save()
+        const userlog = saveLogs(req.cookies.username, "ReportPage")
+        await userlog.save()
     }
-
-
 })
 
 app.get("/showAboutButton", async (req, res) => {
     setCache(res)
-    // const userlog = saveLogs(req.cookies.username, "AboutButton")
-    // await userlog.save()
+    const userlog = saveLogs(req.cookies.username, "AboutButton")
+    await userlog.save()
     res.redirect("/aboutPage")
 })
 app.get("/aboutPage", async (req, res) => {
@@ -180,17 +159,16 @@ app.get("/aboutPage", async (req, res) => {
         res.redirect("/")
     } else {
         res.render("aboutPage")
-        // const userlog = saveLogs(req.cookies.username, "AboutPage")
-        // await userlog.save()
+        const userlog = saveLogs(req.cookies.username, "AboutPage")
+        await userlog.save()
     }
-
 
 })
 
 app.get("/faqButton", async (req, res) => {
     setCache(res)
-    // const userlog = saveLogs(req.cookies.username, "FAQButton")
-    // await userlog.save()
+    const userlog = saveLogs(req.cookies.username, "FAQButton")
+    await userlog.save()
     res.redirect("/faqPage")
 })
 app.get("/faqPage", async (req, res) => {
@@ -199,16 +177,16 @@ app.get("/faqPage", async (req, res) => {
         res.redirect("/")
     } else {
         res.render("faqPage")
-        // const userlog = saveLogs(req.cookies.username, "FAQPage")
-        // await userlog.save()
+        const userlog = saveLogs(req.cookies.username, "FAQPage")
+        await userlog.save()
     }
 
 })
 
 app.get("/questionBtn", async (req, res) => {
     setCache(res)
-    // const userlog = saveLogs(req.cookies.username, "QuestionButton")
-    // await userlog.save()
+    const userlog = saveLogs(req.cookies.username, "QuestionButton")
+    await userlog.save()
     res.redirect("/detailQuestions")
 })
 
@@ -218,15 +196,15 @@ app.get("/detailQuestions", async (req, res) => {
         res.redirect("/")
     } else {
         res.render("detailQuestions")
-        // const userlog = saveLogs(req.cookies.username, "DetailQuestionPage")
-        // await userlog.save()
+        const userlog = saveLogs(req.cookies.username, "DetailQuestionPage")
+        await userlog.save()
     }
 })
 
 app.get("/backButton", async (req, res) => {
     setCache(res)
-    // const userlog = saveLogs(req.cookies.username, "BackButton")
-    // await userlog.save()
+    const userlog = saveLogs(req.cookies.username, "BackButton")
+    await userlog.save()
     res.redirect("/aboutPage")
 })
 
