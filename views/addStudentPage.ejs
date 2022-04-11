@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('partials/header') %> 
+        <link rel="stylesheet" href="/index.css">
+        <title>Add Student Page</title>  
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <h3 class="mt-5">Add Student</h3>
+    <form action="/addStudentPage" method="POST" class="centerForm">
+        <div class="mb-3">
+            First name
+            <input type="text" name="firstname" id="fname" class="form-control" onchange="stateHandle()">
+        </div>
+        <div class="mb-3">
+            Last name
+            <input type="text" name="lastname" id="lname" class="form-control"  onchange="stateHandle()">
+        </div>
+        <div class="center">
+            <button type="submit" class="btn btn-dark" id ="addstudent">Submit</button>
+        </div>
+    </form>
+    <%- include('partials/footer') %>
+</body>
+<script>
+
+    let fname = document.getElementById("fname")
+    let lname = document.getElementById("lname")
+    let button = document.getElementById("addstudent")
+    button.disabled = true;
+
+    function stateHandle() {
+        if (fname.value === "" || lname.value === "") {
+            button.disabled = true;
+            //button remains disabled
+        } else {
+            button.disabled = false; //button is enabled
+        }
+    }
+</script>
+</html>

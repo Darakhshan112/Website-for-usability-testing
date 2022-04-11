@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('partials/header') %>
+        <link rel="stylesheet" href="/faq.css">
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+        <h3 class="mt-5">Search Your Qqueries Here</h3>
+        <div id="questionsDiv" class="list-group mt-5">
+            <a href="/questionBtn" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Question 1</h5>
+                </div>
+                <p class="mb-1">
+                    What's special in our website?
+                </p>
+            </a>
+            <a href="/questionBtn" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Question 2</h5>
+                </div>
+                <p class="mb-1">
+                    How to generate report?
+                </p>
+            </a>
+            <a href="/questionBtn" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Question 3</h5>
+                </div>
+                <p class="mb-1">
+                    How to delete data of students?
+                </p>
+            </a>
+            <a href="/questionBtn" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Question 4</h5>
+                </div>
+                <p class="mb-1">
+                    Is it is necessary to add last name?
+                </p>
+            </a>
+        </div>
+        <%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,36 @@
+table {
+    
+    margin: 10px auto 10px auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    width: 50%;
+  }
+
+  td {
+    border: 1px solid #726E6D;
+    padding: 15px;
+  }
+
+  thead {
+    font-weight: bold;
+    text-align: center;
+    background: #625D5D;
+    color: white;
+  }
+
+  .footer {
+    text-align: right;
+    font-weight: bold;
+  }
+
+  tbody>tr:nth-child(odd) {
+    background: #D1D0CE;
+  }
+  h3{
+    text-align: center;
+  }
+  div{
+    overflow-x:auto;
+  }

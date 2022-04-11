@@ -1,0 +1,13 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+h3{
+    text-align: center;
+}
+#questionsDiv{
+    margin: auto;
+    width: 80%;
+}

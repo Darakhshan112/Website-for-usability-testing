@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header') %>
+        <link rel="stylesheet" href="/showStudent.css">
+        <title>Show Student Page</title>
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+        <h3 class="mt-5">List Of Enrolled Students</h3>
+ 
+        <div id="icons">
+            <div>
+                <a href="/showReportButton"><i class="far fa-pencil-square-o"></i></a>
+            </div>
+            <div>
+                <a href="/showAboutButton"><i class="far fa-address-card"></i></a>
+            </div>
+        </div>
+        <span>Click on report icon to generate report</span>
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+            <% data.forEach((item)=>{%>
+                <tr>
+                    <td>
+                        <%=item.firstname%>
+                    </td>
+                    <td>
+                        <%=item.lastname%>
+                    </td>
+                </tr>
+                <%});%>
+        </table>
+        <span id="AddDeleteBtn">
+            <button type="button" class="btn btn-dark "><a href="/addStudentButton"> Add student </a></button>
+            <button type="button" class="btn btn-dark mt-1 "><a href="/deleteStudentButton">Delete student </a></button>
+        </span>
+        <%- include('partials/footer') %>
+</body>
+
+</html>

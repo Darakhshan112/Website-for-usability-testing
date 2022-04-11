@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header') %>
+        <link rel="stylesheet" href="index.css">
+        <title>Index Page</title>
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+        <br>
+        <h3 class="mb-4 mt-xl-5">Getting Started</h3>
+        <form action="/" method="POST">
+            <div class="mb-3 centerForm">
+                <span>Required*</span>
+                <input type="text" name="username" class="form-control" placeholder="Username" id="usernamefield"
+                    onchange="stateHandle()" oninput="allowalphanum(this)"
+                    title="Username can only habe letters  and numbers. Username shoul not contain spaces or any special character">
+            </div>
+            <div class="center">
+                <button type="submit" class="btn btn-dark" id="usernamebtn"> Start </button>
+            </div>
+        </form>
+        <%- include('partials/footer') %>
+</body>
+<script>
+
+    let input = document.getElementById("usernamefield")
+    let button = document.getElementById("usernamebtn")
+    button.disabled = true;
+    function allowalphanum(element) {
+        let textInput = element.value;
+        textInput = textInput.replace(/[^A-Za-z0-9]*$/gm, "");
+        element.value = textInput;
+    }
+    function stateHandle() {
+        if (input.value === "") {
+            button.disabled = true;
+            //button remains disabled
+        } else {
+            button.disabled = false; //button is enabled
+        }
+    }
+</script>
+
+</html>

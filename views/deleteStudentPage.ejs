@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/header') %>
+    <link rel="stylesheet" href="/showStudent.css">
+    <title>Delete Student Page</title>
+</head>
+<style>
+    table {
+        width: 50%;
+    }
+    th,
+    td {
+        text-align: center;
+    }
+</style>
+<body>
+    <%- include('partials/navbar') %>
+        <h3 class="mt-4">Delete Student</h3>
+        <table class="mt-5">
+            <tr>
+                <th>first name</th>
+                <th>last Name</th>
+                <th>Delete</th>
+            </tr>
+            <% data.forEach((item)=>{%>
+                <tr>
+                    <td>
+                        <%=item.firstname%>
+                    </td>
+                    <td>
+                        <%=item.lastname%>
+                    </td>
+                    <td>
+                        <i class="fa-solid fa-trash-can" style="color: red;"></i>
+                    </td>
+                </tr>
+            <%});%>
+        </table>
+        <%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,80 @@
+/* cs sof show student and delet student page  */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+table {
+
+    margin: 10px auto 10px auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 80%;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: rgb(61, 57, 57);
+    color: white;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+
+}
+
+a:hover {
+    color: #ddd;
+    text-decoration: none;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+h3 {
+    text-align: center;
+}
+
+#icons {
+    margin: 5px auto 1px auto;
+    width: 80%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: right
+}
+
+#icons div {
+    background-color: black;
+    border-radius: 3px;
+    margin: 3px 3px 0px 3px;
+}
+
+#icons a {
+    padding: 3px;
+}
+
+#icons i {
+    font-size: 30px;
+}
+span{
+    text-align: right;width: 80%;margin:0px auto;font-size: 11px;color: rgb(120, 112, 112);
+}
+#AddDeleteBtn{
+    display: inline-block;vertical-align: top; ;margin:auto;width: 150px;
+}
+#AddDeleteBtn button{
+   width: 150px;
+}

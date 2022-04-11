@@ -1,0 +1,33 @@
+/* //css of index and add student page */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.centerForm {
+    margin: auto;
+    width: 40%;
+}
+
+input[type=text] {
+    border: 2px solid rgb(130, 112, 112);
+    border-radius: 4px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 100px;
+}
+h3{
+    text-align: center;
+}
+span{
+    color: red;font-size: 10px;
+}
