@@ -12,7 +12,13 @@ h3 {
     width: 80%;
     border: 1px solid grey;
 }
-
+a{
+    color: #ddd;
+}
+a:hover {
+   color: #ddd;
+   text-decoration: none;
+}
 .quesDiv {
     border-bottom: 1px solid black;
     border-radius: 3px;
